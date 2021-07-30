@@ -34,15 +34,9 @@ jobs:
         run: |
           echo Add other actions to build,
           echo test, and deploy your project.
-      #Zip up the resourcepack
-      - uses: papeloto/action-zip@v1
-        with:
-          files: resourcepack/
-          recursive: true
-          dest: result.zip
       - uses: actions/upload-artifact@v1
         with:
           name: resourcepack
-          path: ${{ github.workspace }}/result.zip
+          path: "${{ github.workspace }}/resourcepack/*"
 
 
